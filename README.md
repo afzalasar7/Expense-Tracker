@@ -1,13 +1,3 @@
-management and intuitive user authentication.
-
-link: https://expense-trac-4wvd.onrender.com/
-
-3/3
-
-ChatGPT said:
-markdown
-Copy
-Edit
 # 💰 Expense Tracker – Your Personal Finance Companion
 
 Take control of your finances with **Expense Tracker**, a smart and intuitive web app built to help you manage your **income, expenses, savings, and investments** seamlessly. Designed with **Python, Flask, SQLite, Plotly, HTML, and CSS**, this app provides **real-time insights** into your spending habits, ensuring better financial decisions and smarter money management.
