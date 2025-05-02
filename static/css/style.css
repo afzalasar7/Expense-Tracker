@@ -1,53 +1,26 @@
-.bg-nav{
-    background: #e65c00;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #F9D423, #e65c00);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #F9D423, #e65c00); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* --- Modern Blue Theme Revamp --- */
 
-}
-.body{
-    background: #5C258D;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #4389A2, #5C258D);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #4389A2, #5C258D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-.page-bg{
-    background: #0F2027;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.deep-purple{
-    background: #673AB7;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #512DA8, #673AB7);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #512DA8, #673AB7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-
-.alive{
-    background: #CB356B;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #BD3F32, #CB356B);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #BD3F32, #CB356B); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-.citrus{
-    background: #FDC830;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #F37335, #FDC830);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #F37335, #FDC830); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-}
-.green{
-    background: #11998e;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #38ef7d, #11998e);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #38ef7d, #11998e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+/* === Variables (Optional but recommended for larger projects) === */
+:root {
+  --primary-blue: #0a74da; /* A vibrant primary blue */
+  --secondary-blue: #0759a3; /* A slightly darker blue for accents/hovers */
+  --light-blue: #e6f3ff; /* Light blue for backgrounds */
+  --dark-blue: #043d73; /* Dark blue for text or deep backgrounds */
+  --panel-bg-start: #1a2a6c; /* Gradient start for panels */
+  --panel-bg-end: #2e45a3; /* Gradient end for panels */
+  --text-light: #ffffff;
+  --text-dark: #1f2937; /* Dark grey for text on light backgrounds */
+  --border-color: #cddcf0; /* Subtle border color */
+  --success-green: #10b981; /* Keeping green for success/positive actions */
+  --error-red: #ef4444; /* Standard red for errors/warnings */
+  --font-family: "Poppins", sans-serif;
+  --base-font-size: 16px;
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 15px;
 }
 
-
-.mt-50{
-    margin-top : 40px
-}
-
-.mt-60{
-    margin-top : 60px
-}
-
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
-
+/* === Base & Typography === */
 * {
   margin: 0;
   padding: 0;
@@ -56,358 +29,504 @@
 }
 
 body {
+  font-family: var(--font-family);
+  font-size: var(--base-font-size);
+  color: var(--text-dark);
+  background-color: var(--light-blue); /* Light blue base background */
   overflow-x: hidden;
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
+  line-height: 1.6; /* Improved readability */
 }
 
 ul {
   list-style: none;
 }
 
-input {
+input,
+textarea,
+button {
+  font-family: inherit; /* Ensure form elements inherit font */
+  font-size: inherit;
+}
+
+input,
+textarea {
   overflow: hidden;
 }
 
+a {
+  color: var(--primary-blue);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--secondary-blue);
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    color: var(--dark-blue); /* Darker blue for headings */
+    margin-bottom: 0.75em; /* Consistent bottom margin */
+}
+
+/* === Utility Classes === */
+.mt-50 {
+  margin-top: 40px; /* Kept original values, but consider using em/rem */
+}
+
+.mt-60 {
+  margin-top: 60px;
+}
+
+.width-auto {
+  width: auto;
+}
+
+.width-100 {
+  width: 100%;
+}
+
+/* === Section Styling === */
 .section-title {
   position: relative;
-  font-size: 30px;
+  font-size: 2rem; /* Responsive font size */
   font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  margin: 0 0 35px;
+  color: var(--dark-blue);
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--primary-blue);
+  display: inline-block; /* Prevent border spanning full width */
 }
 
 .sec-pad {
-  padding: 60px 0 0;
-  margin: 50px 0;
+  padding: 60px 15px; /* Added horizontal padding for smaller screens */
+  margin: 0; /* Removed default margin, control spacing via parent */
 }
 
+/* === Specific Backgrounds (Replaced with modern blue themes) === */
+.bg-nav {
+  /* Example: Clean, solid dark blue nav */
+  background-color: var(--dark-blue);
+  color: var(--text-light); /* Ensure text is light on dark bg */
+  padding: 15px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.body {
+  /* Body already styled, this class might be redundant or specific */
+  /* If needed for specific sections: */
+  /* background: linear-gradient(to right, #4e73df, #224abe); */ /* Example blue gradient */
+  background-color: #f8f9fc; /* Example: very light grey/blue */
+}
+
+.page-bg {
+  /* Example: Subtle gradient background for specific pages/sections */
+  background: linear-gradient(135deg, #e6f0ff, #d0e0f8);
+}
+
+
+/* === Contact Section === */
 .contact-sec {
-  align-item: center;
   display: flex;
-  background-color: #5cbde466;
+  align-items: center; /* Corrected typo */
+  background-color: #ffffff; /* Clean white background */
+  padding: 40px;
+  border-radius: var(--border-radius-lg);
+  box-shadow: 0 4px 15px rgba(0, 83, 168, 0.1); /* Soft blue shadow */
 }
 
-.contact-sec .contact-ul li,
-.contact-ul b {
-  font-size: 20px;
-  margin: 10px 0;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+.contact-sec .contact-ul li {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+  color: var(--text-dark);
+  display: flex; /* Align icon and text */
+  align-items: center;
+  font-family: inherit; /* Use main font */
   word-wrap: break-word;
 }
 
-.contact-sec .contact-ul i {
-  font-size: 18px;
-  padding: 10px;
-  margin-right: 10px;
-  border-radius: 50%;
+.contact-sec .contact-ul b {
+    font-weight: 500; /* Less harsh than default bold */
+    color: var(--dark-blue);
 }
+
+.contact-sec .contact-ul i {
+  font-size: 1.2rem;
+  margin-right: 15px;
+  color: var(--primary-blue);
+  width: 40px; /* Fixed width for alignment */
+  height: 40px; /* Fixed height */
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-blue); /* Light blue background for icons */
+  border-radius: 50%;
+  border: none; /* Removed old borders */
+}
+
 .contact-detail a {
-  color: #000;
+  color: var(--dark-blue); /* Use dark text color */
   text-decoration: none;
 }
 
+.contact-detail a:hover,
 .contact-sec .contact-ul li b:hover {
-  color: #f93;
+  color: var(--primary-blue);
 }
 
-.contact-sec .contact-ul li .fa-location-dot {
-  color: #f44337;
-  border: 2px solid #f4433790;
-}
-
-.contact-sec .contact-ul li .fa-phone {
-  color: #00b055;
-  border: 2px solid #00b05590;
-}
-
-.contact-sec .contact-ul li .fa-envelope {
-  color: #ff6347;
-  border: 2px solid #ff634790;
-}
-
+/* Social Icons */
 .contact-detail span {
-  width: 400px;
+  width: auto; /* Allow natural width */
   display: flex;
-  justify-content: center;
+  justify-content: flex-start; /* Align left */
+  margin-top: 20px;
 }
+
 .contact-detail span a {
-  font-size: 20px;
-  padding: 6px 12px;
-  color: #000;
+  font-size: 1.3rem; /* Slightly larger icons */
+  color: var(--primary-blue);
+  border: 2px solid var(--border-color);
   border-radius: 50%;
-  margin: 0px 5px;
-}
-.contact-detail span .fb {
-  color: #3b5998;
-  border: 3px solid #3b5998;
-}
-.contact-detail span .fb:hover {
-  color: #fff;
-  background-color: #3b5998;
-}
-
-.contact-detail span .insta {
-  color: #833ab4;
-  border: 3px solid #833ab4;
-}
-.contact-detail span .insta:hover {
-  color: #fff;
-  background-color: #833ab4;
+  margin-right: 10px; /* Space between icons */
+  padding: 8px; /* Adjust padding for visual balance */
+  width: 40px; /* Consistent size */
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
 }
 
-.contact-detail span .twitter {
-  color: #00acee;
-  border: 3px solid #00acee;
-}
-.contact-detail span .twitter:hover {
-  color: #fff;
-  background-color: #00acee;
+.contact-detail span a:hover {
+  background-color: var(--primary-blue);
+  color: var(--text-light);
+  border-color: var(--primary-blue);
 }
 
+/* Form Styling */
 form.contFrm {
-  max-width: 396px;
-  margin: auto;
+  max-width: 100%; /* Allow form to take available space */
+  margin: 0; /* Remove auto margin if within flex/grid */
 }
 
 .inptFld {
   width: 100%;
-  height: 50px;
-  border: 0;
-  margin: 0 0 10px;
-  border-radius: 8px;
-  padding: 0 20px;
-  font-size: 16px;
-  color: #000;
+  height: 48px;
+  border: 1px solid var(--border-color);
+  background-color: #fff;
+  margin-bottom: 15px; /* Consistent spacing */
+  border-radius: var(--border-radius-md);
+  padding: 0 15px;
+  font-size: 1rem;
+  color: var(--text-dark);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .inptFld:focus {
-  outline-offset: -4px;
-  outline: 1px solid #f93;
+  outline: none;
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(10, 116, 218, 0.2); /* Subtle focus ring */
 }
 
-.contFrm textarea {
-  height: 75px;
-  padding-top: 5px;
+.contFrm textarea.inptFld { /* Target textarea specifically */
+  height: 120px; /* More space for message */
+  padding-top: 15px; /* Padding from top */
+  resize: vertical; /* Allow vertical resize */
 }
+
 .inptBtn {
-  height: 50px;
-  border: 0;
-  background: #00b055;
-  font-size: 14px;
-  color: #fff;
-  margin: auto;
-  letter-spacing: 1px;
+  height: 48px;
+  border: none;
+  background-color: var(--primary-blue);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-light);
+  padding: 0 30px; /* Horizontal padding */
+  border-radius: var(--border-radius-md);
   cursor: pointer;
-  width: 100%;
-  max-width: 200px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  display: block; /* Center if needed */
+  margin: 20px auto 0; /* Margin top and center */
+  max-width: 200px; /* Maintain max width */
 }
 
-/* Responcive css Start */
-
-@media (max-width: 991px) {
-  .sec-pad {
-    padding: 20px 0 0px;
-  }
-
-  .contact-sec .contact-ul li,
-  .contact-ul b {
-    font-size: 18px;
-  }
-
-  .contact-sec .contact-ul i {
-    font-size: 14px;
-    padding: 6px;
-    margin-right: 6px;
-  }
-
-  .inptFld {
-    height: 40px;
-    margin: 0 0 10px;
-    padding: 0 14px;
-    font-size: 14px;
-  }
+.inptBtn:hover {
+  background-color: var(--secondary-blue);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-@media (max-width: 767px) {
-  .contact-detail span {
-    width: auto;
-  }
-  .contact-detail span a {
-    font-size: 18px;
-    padding: 5px 10px;
-    color: #000;
-    border-radius: 50%;
-    margin: 0px 5px 20px;
-  }
-}
-
-@media (max-width: 575px) {
-  .section-title {
-    font-size: 26px;
-    font-weight: 500;
-  }
-  .contact-sec {
-    border-radius: 10% 10% 0% 0% / 5% 5% 0% 0%;
-  }
-
-  .contact-sec .contact-ul i {
-    border: none;
-  }
-  .inptFld {
-    height: 36px;
-    margin: 0 0 8px;
-    padding: 0 14px;
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 480px) {
-  .contact-sec .contact-ul li,
-  .contact-ul b {
-    font-size: 16px;
-  }
-}
-
-
-.chart_border {
-  border: 2px solid white;
-  border-radius: 40px 10px;
-}
-
-
+/* === Panel Styling === */
 .panel {
-    background: linear-gradient(
-        90deg, #262a4f, #122442
-    );
-    box-shadow:
-    -5px -5px 8px #293063,
-    5px 5px 8px #11163c;
-    border-radius: 15px;
-    overflow: hidden;
+  background: linear-gradient(135deg, var(--panel-bg-start), var(--panel-bg-end)); /* Blue gradient */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  color: var(--text-light); /* Light text on dark panel */
+  padding: 20px; /* Add padding */
+  margin-bottom: 30px; /* Space between panels */
 }
 
+.panel h4, .panel h6 {
+    color: var(--text-light); /* Ensure headings inside panel are light */
+}
 
 .list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.2em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0; /* Padding top/bottom, remove side padding if panel has it */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Subtle separator */
+}
+.list li:last-child {
+    border-bottom: none; /* Remove border from last item */
 }
 
 .list span {
-    color: #ea335d;
+  color: #87CEFA; /* Light Sky Blue for accents */
+  font-weight: 500;
 }
 
-.list h4, h6 {
-    color: #ffffff;
-}
-
-
-/* Sales panel */
+/* === Sales Panel Specifics === */
 .sales {
-    grid-column-start: span 3;
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-gap: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+  grid-gap: 20px; /* Gap between sales items */
+  margin-bottom: 30px; /* Space below sales section */
 }
 
 .sales > div {
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    padding: 1em;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Consistent shadow */
+  border-radius: var(--border-radius-md);
+  padding: 20px;
+  color: var(--text-light);
+  text-align: center; /* Center align content */
+  transition: transform 0.3s ease;
+}
+
+.sales > div:hover {
+    transform: translateY(-5px); /* Subtle lift on hover */
 }
 
 .sales h1 {
-    margin: 0.5em 0;
+  margin: 0.5em 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--text-light);
 }
 
-.sales small{
-    color: #fff;
+.sales small {
+  color: rgba(255, 255, 255, 0.8); /* Slightly transparent text */
+  display: block; /* Put on new line */
+  margin-top: 5px;
+}
+
+/* Example blue variations for sales panels */
+.sales > div:nth-child(odd) {
+  background: linear-gradient(45deg, #1e3a8a, #2563eb); /* Dark to Primary Blue */
 }
 
 .sales > div:nth-child(even) {
-    background: linear-gradient(
-        0deg, #b52b4b, #ea335d
-    );
+  background: linear-gradient(45deg, #3b82f6, #60a5fa); /* Primary to Lighter Blue */
 }
 
-.sales > div:nth-child(odd) {
-    background: linear-gradient(
-        0deg, #178add, #03dcee
-    );
+/* === Goal Panel === */
+.goal-panel {
+  color: var(--text-dark); /* Use dark text on light background */
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 5px 15px rgba(0, 83, 168, 0.1); /* Soft blue shadow */
+  border-radius: var(--border-radius-lg);
+  overflow: hidden;
+  padding: 20px;
+}
+.goal-panel h4, .goal-panel h6 {
+    color: var(--dark-blue); /* Dark blue text */
 }
 
-
-/* goal panel */
+.goals {
+  display: flex;
+  flex-direction: column;
+}
 
 .goal {
-    padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 15px 0;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--border-color);
+}
+.goal:last-child {
+    border-bottom: none;
 }
 
-.goals,
-.goal,
 .goal-title {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 100%; /* Ensure it spans width */
+    margin-bottom: 0; /* Remove default margin */
 }
 
-.goal-title h4:nth-child(1) {
-    margin: 0 2em 0 0;
+.goal-info {
+    display: flex;
+    align-items: center;
 }
 
-.goal-title {
-    margin-bottom: 0.5em;
+.goal-text {
+    margin-left: 15px; /* Space between icon and text */
 }
 
-.goals {
-    flex-direction: column;
+.goal-text h6 {
+    margin-bottom: 0.25em; /* Reduce space below subheading */
+    color: #6b7280; /* Grey for secondary text */
 }
 
-.goal {
-    margin: 1em 0;
+
+.icon-color-up, .icon-color-down {
+    font-size: 1.8em; /* Adjust size */
+    margin-right: 0; /* Remove margin, handled by goal-text */
 }
 
 .icon-color-up {
-    color: #03ee2e;
-    margin-right: 0.5em;
-    font-size: 2em;
+  color: var(--success-green);
 }
 
 .icon-color-down {
-    color: #d02727;
-    margin-right: 0.5em;
-    font-size: 2em;
+  color: var(--error-red);
 }
 
-.goal-panel {
-    color:#ffff;
-    background: linear-gradient(
-        90deg, #192f37, #264652
-    );
-    box-shadow:
-    -5px -5px 8px #264652,
-    5px 5px 8px #192f37;
-    border-radius: 15px;
-    overflow: hidden;
-}
-
-.body2 {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    color: #fff;
-    background: #172042;
+/* === Miscellaneous === */
+.chart_border {
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg); /* Consistent radius */
+  padding: 15px; /* Add some padding */
+  background-color: #fff; /* White background for chart */
+  box-shadow: 0 4px 10px rgba(0, 83, 168, 0.08);
 }
 
 .fa-check-circle {
-  color: green;
+  color: var(--success-green); /* Use success variable */
 }
 
-.width-auto {
-    width: auto;
-  }
+/* === Responsive Adjustments === */
 
-.width-100 {
-    width: 100%;
-  }
+/* Resetting styles from original @media queries first if necessary */
+@media (max-width: 991px) {
+    .sec-pad {
+        padding: 40px 15px; /* Adjust padding */
+    }
+    .section-title {
+        font-size: 1.8rem;
+        margin-bottom: 30px;
+    }
+    .contact-sec .contact-ul li {
+        font-size: 1rem;
+    }
+    .contact-sec .contact-ul i {
+        font-size: 1.1rem;
+        width: 36px;
+        height: 36px;
+        margin-right: 12px;
+    }
+    .inptFld {
+        height: 44px;
+        padding: 0 12px;
+        font-size: 0.95rem;
+        margin-bottom: 12px;
+    }
+    .contFrm textarea.inptFld {
+        height: 100px;
+    }
+    .inptBtn {
+        height: 44px;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        font-size: 15px; /* Slightly smaller base font */
+    }
+    .section-title {
+        font-size: 1.6rem;
+    }
+    .contact-sec {
+        flex-direction: column; /* Stack contact info and form */
+        padding: 30px;
+    }
+    .contact-detail, form.contFrm {
+        width: 100%; /* Take full width when stacked */
+        max-width: 450px; /* Optional: max-width for form */
+        margin-top: 30px;
+    }
+    .contact-detail:first-child {
+        margin-top: 0; /* Remove top margin for the first element */
+    }
+    .contact-detail span {
+        justify-content: center; /* Center social icons */
+        margin-top: 15px;
+    }
+    .contact-detail span a {
+        font-size: 1.2rem;
+        padding: 6px;
+        width: 36px;
+        height: 36px;
+    }
+    .sales {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Adjust columns */
+        grid-gap: 15px;
+    }
+    .sales > div {
+        padding: 15px;
+    }
+    .sales h1 {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 575px) {
+    .section-title {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+    .sec-pad {
+        padding: 30px 15px;
+    }
+    .contact-sec {
+        border-radius: var(--border-radius-lg); /* Consistent radius */
+        padding: 20px;
+    }
+    .contact-sec .contact-ul i {
+        background-color: transparent; /* Remove icon background on mobile if desired */
+        color: var(--primary-blue); /* Ensure color remains */
+    }
+    .inptFld, .inptBtn {
+        height: 40px;
+        font-size: 0.9rem;
+    }
+     .contFrm textarea.inptFld {
+        height: 90px;
+    }
+     .inptBtn {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-sec .contact-ul li {
+        font-size: 0.95rem;
+    }
+    .goal {
+        flex-direction: column; /* Stack icon/text and value */
+        align-items: flex-start;
+    }
+    .goal-title {
+        margin-top: 10px; /* Add space when stacked */
+        width: 100%;
+    }
+}
+
+/* === Removed unused/replaced styles === */
+/* .deep-purple, .alive, .citrus, .green (replaced by blue theme) */
+/* .body2 (integrated into body or removed if redundant) */
+
